@@ -1,6 +1,5 @@
 //DataStructure: Array and Object
 
-const { SIGUSR1 } = require("constants");
 
 // arrays example
 // let listOfNumbers = [2, 3, 5, 7, 11];
@@ -42,20 +41,93 @@ const { SIGUSR1 } = require("constants");
 //////////////////////////////////////////////
 
 
-let arr = [];
-arr.push(12);
-arr.push(13);
-arr.push(14,15,16);
+// let arr = [];
+// arr.push(12);
+// arr.push(13);
+// arr.push(14,15,16);
 
-for (let i = 0; i < arr.length; i++)
-       console.log(arr[i])     
+// for (let i = 0; i < arr.length; i++)
+//        console.log(arr[i])     
 
-arr.pop();
-arr.pop();
+// arr.pop();
+// arr.pop();
 
-console.log("----------")     
-for (let i = 0; i < arr.length; i++)
-       console.log(arr[i])     
+// console.log("----------")     
+// for (let i = 0; i < arr.length; i++)
+//        console.log(arr[i])     
+
+
+// ///////////////////////////////////////////////////////////
+// Object 
+/////////////////////////////////////////////////////////////
+// Objects are in javascript is the biggest building block.
+// var comapny = { name: ‘panacloud’, employee: 100 }
+// Undefined vs null
+// const person = {
+//   age: 1,
+//   name: 'daniyal',
+//   sports: 'cricket',
+//   events: ["work", "touched tree", "pizza", "running", ["tomato", "banana"]]
+// }
+
+// person.age = 23 
+// console.log(person.age);
+
+// console.log(person.events[4][0]);
+
+
+// ///////////////////////////////////////////////////
+// const person = {
+//        age: 1,
+//        name: 'daniyal',
+//        sports: 'cricket'
+//      }
+//      person = {} 
+//      console.log(person);
+     
+//      Uncaught TypeError: Assignment to constant variable.
+     
+// const obj = {
+//        prop: 42
+//      };
+     
+//      Object.freeze(obj);
+     
+//      obj.prop = 33;
+//      // Throws an error in strict mode
+     
+//      console.log(obj.prop);
+//      // expected output: 42
+     
+//////////////////////////////////////////
+// let objectA = {a: 1, b: 2};
+// Object.assign(objectA, {b: 3, c: 4});
+// objectA.d = 6;
+// console.log(objectA);
+
+
+// ///////////////////////////////////////////
+
+
+// let xyz = ["ashar", 20, {programming:"C++", uni:"dawood"}];
+// console.log(xyz[2].uni);
+
+
+
+// Mutability
+
+// let object1 = {value: 10};
+// let object2 = object1;
+// let object3 = {value: 10};
+// console.log(object1);
+// console.log(object2);
+// console.log(object3);
+
+// console.log(object1 == object2);
+// console.log(object1 == object3);
+
+
+
 
 
 
@@ -337,8 +409,316 @@ for (let i = 0; i < arr.length; i++)
 // const month = ["jan", "feb", "mar","april", "jun"]
 // const upM = month.splice(1,Infinity)  //infinity delete all from index 1
 // console.log(month);
+
+// MAP() (it is not distrub original array, while forEach() change original array)
+// return new array which you want in form of F/T...
+
+// const array1 = [1,4,9,16,25];
+// // num > 9
+
+// let newAtt = array1.map((e , i , arr)=>{
+//     return e > 9
+// })
+
+// console.log(newAtt);
+// console.log(array1);
+
+/////////////////////////////////
+// const array2 = [1,4,9,16,25];
+
+// let newArr2 = array2.map((e , i , arr)=>{
+//     return `${i} and the value is ${e} belong to arr ${arr}`;
+// })
+// console.log(newArr2);
+//////////////////////////////////////////
+//   Challenge
+/////////////////////////////////////////
+
+// 1, Find the square root of each element in an array?
+
+// let arr = [25, 36, 49, 64, 81];
+
+// let sqRoot = arr.filter((e, i, arr)=>{
+//     return Math.sqrt(e);
+// });
+
+// let qRoot = arr.map((e, i, arr)=>{
+//     return Math.sqrt(e);
+// });
+// console.log(sqRoot);
+
+// 2, Multiply each element by 2 and return only thosee element which are greater than 10?
+// chaing effect
+// let arr = [2, 3, 4, 6, 8];
+
+// let sqRoot = arr.map((element) => element*2).filter((currElement)=> currElement>10);
+// console.log(sqRoot);
+
+////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+// Reduce Method
+//////////////////////////////////////////////////////////////////
+
+
+// flatten an array means to convert the 3d or 2d array into a single dimensional array
+// Also
+// the reduce method execute ta reducer function (that you provide) 
+// on each element of the array, resulting in a single output value
+
+// Basically reduce method take four arguments:
+// Accumulator  // argument 
+// Current value  // argument
+// Current index // argument
+// Source Array // argument
+
+// // i want sum of array
+// let arr = [5,6,2];
+// // // accumulator mean what operation here sum is operation
+// let sum = arr.reduce((accumulator, e, i, arr) => {
+//     return accumulator+=e;
+// })
+
+// console.log(sum); //sum of array is 13
+
+////////////////////////////////////////////////////////////
+
+
+
+// let arr = [5,6,2];
+// // // accumulator mean what operation here sum is operation
+// let sum = arr.reduce((accumulator, e, i, arr) => {
+//     return accumulator+=e;
+// },10) // add 150 and sum of array, accumulator add array in to 150
+
+
+// console.log(sum); //sum of array is 163
+
+
+
+//////////////////////////////
+// apply reduce above code
+// chainable Method 
+
+// let arr = [2, 3, 4, 6, 8];
+
+// let sqRoot = arr.map((element) => element*2).filter((currElement)=> currElement>10).reduce((acc, e)=> acc+=e);
+// console.log(sqRoot);
+
+
+/////////////////////////////////
+
+
+// // Convert 2d, 3d into 1d array using reduce 
+
+// const arr = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+
+// let flatArray = arr.reduce((acc,e)=> acc.concat(e));
+// console.log(flatArray);
+
+// this condition above logic not work! solve ES-2020 see soon
+// const arr = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9,[10,11,12]]
+// ];
+// let flatArray = arr.reduce((acc,e)=> acc.concat(e));
+// console.log(flatArray);
+
+
+// indexOf, lastIndexOf, include, find, findIndex, push, pop, unshift, shift, splice, filter, map, reduce...
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////// Object Oriented in Js ////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//  let bioData = {
+//      name         : "malik" ,
+//      age          :  18 ,
+//      getData      : function(){ console.log(bioData.name)}
+//  }
+
+// console.log(bioData.age);
+// bioData.getData();
+
+
+// another way After ES-6
+
+
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     getData(){ console.log(bioData.name)}
+// }
+
+// console.log(bioData.age);
+// bioData.getData()
+
+// Object inside the Object
+
+
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     edu: {
+//         subject:"programmingC++",
+//         semester:3
+//     }
+// }
+
+// console.log(bioData.edu.subject);
+
+
+
+
+// THIS
+
+// console.log(this) // run on browser
+// console.log(this.alert('hellow')) // run on browser
+
+
+
+
+// run on browser, current contex of this is also window
+// function x (){
+// console.log(this) 
+// }
+// x();
+
+
+
+// let names = "kuchBH"
+
+// function x (){
+//     console.log(this.names) 
+//     }
+//     x();
+    
+// important part
+ // here contex of this is Obj, so we access any obj property like bio.name etc
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     getData(){ 
+//         console.log(this);
+//         console.log(this.age);
+//     }
+// }
+
+// bioData.getData()
+
+
+// what the output of this only change fun type use fat arrow func..
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     getData: ()=>{ 
+//         console.log(this); // here contex is windows not Object, because we not use this in fat arrow fun
+//         console.log(this.age);
+//     }
+// }
+
+// bioData.getData() 
+
+
+// ES - 6 PART
+
+// Array DESTRUCTURING
+
+// const myData = ["malik", 18, "C++"]
+// let [name, age, subject] = myData;
+
+// // console.log(age);
+
+// const student = ["ashar", 20, "js"];
+
+// let [name, age, subject, gender="male"] = student;
+
+// console.log(name, age, subject, gender)
+ 
+
+
+// const myData = ["malik", 18, "C++"]
+// let [name, age, subject, uni="Dawood"] = myData;
+
+// console.log(uni);
+
+
+// Object Destructuring
+
+
+
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     uni : "dawood" 
+// }
+
+// let {name, age, uni, sub="Cpp"} = bioData;
+// console.log(name);
+// console.log(sub);
+
+
+
+// Object Properties
+
+// we use now use Dynamic Properties
+
+// let myName = "name";
+
+
+// let bioData = {
+//     [myName]         : "malik" ,
+//     age          :  18 ,
+//     uni : "dawood" 
+// }
+
+// console.log(bioData);
+
+
+
+
+
+// let myName = "malik"
+// let age = 18
+
+// let bioData = {
+//     myName:myName,  //automatically detect the value
+//     age:age
+// }
+
+// console.log(bioData);
+
+// let x = 20;
+// let y = 30;
+
+// const numbers = {
+//     x,
+//     y
+// }
+// console.log(numbers)
+
+
+// let myName = "name"
+// let age = 18
+
+// let bioData = {  myName, age  }
+
+// console.log(bioData);
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    except book  ////////////////////////////////////////////////////////////////////////////////////////
+//    except book  end ////////////////////////////////////////////////////////////////////////////////////////
 
 
 
