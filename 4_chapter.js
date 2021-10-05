@@ -128,6 +128,24 @@
 
 
 
+///////////////////////////////////////////
+// var name1 = "daniyal";
+// var name2 = "tariq";
+
+// if(name1 === name2){
+//  console.log(name1);
+// }
+// var name1 = "daniyal";
+// var name2 = "daniyal";
+
+// if(name1 === name2){
+//  console.log(name1);
+// }
+// var obj = {name: 'dani',age : 21}
+// var obj1 = {name: 'dani',age : 21}
+// if(obj1 === obj){
+//   console.log('12221');
+// }
 
 
 
@@ -409,6 +427,8 @@
 // const month = ["jan", "feb", "mar","april", "jun"]
 // const upM = month.splice(1,Infinity)  //infinity delete all from index 1
 // console.log(month);
+
+////////////////////////////////////////////////////////
 
 // MAP() (it is not distrub original array, while forEach() change original array)
 // return new array which you want in form of F/T...
