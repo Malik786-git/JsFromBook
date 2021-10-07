@@ -154,29 +154,34 @@
 // Current index // argument
 // Source Array // argument
 
-// const arr = [2,4,6,8];
+const arr = [2,4,6,8];
 
-// const reduceData = arr.reduce((acc,e,i,arr)=> acc += e);
-// console.log(reduceData);
+const reduceData = arr.reduce((acc,e,i,arr)=> acc += e);
+console.log(reduceData);
 
 // // after accumulator calculation add 10
-// const reduceData_2 = arr.reduce((acc,e,i,arr)=> acc += e , 10);
-// console.log(reduceData_2);
+const reduceData_2 = arr.reduce((acc,e,i,arr)=> acc += e , 10);
+console.log(reduceData_2);
 
 // another example
 
 
-const array1 = [1, 2, 3, 4];
+// const array1 = [1, 2, 3, 4];
 
 // 1 + 2 + 3 + 4
-console.log(array1.reduce((previousValue, currentValue) => previousValue + currentValue));
+// console.log(array1.reduce((previousValue, currentValue) => previousValue + currentValue));
+// console.log(array1.reduce((acc, e) => acc + e));
+
 // expected output: 10
 
 // 5 + 1 + 2 + 3 + 4
-console.log(array1.reduce((previousValue, currentValue) => previousValue + currentValue, 5));
+// console.log(array1.reduce((previousValue, currentValue) => previousValue + currentValue, 5));
 // expected output: 15
 
 //////////////////////////////////////////
 
-
+// Chainable Method...(by using filter map reduce)
+// const arrayNumbers = [2,4,6,8,10];
+// let result = arrayNumbers.filter(e=>e>4).map(e=>e*2).reduce((a,e)=>a+e);
+// console.log(result);
 
