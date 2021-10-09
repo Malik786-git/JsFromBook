@@ -154,14 +154,14 @@
 // Current index // argument
 // Source Array // argument
 
-const arr = [2,4,6,8];
+// const arr = [2,4,6,8];
 
-const reduceData = arr.reduce((acc,e,i,arr)=> acc += e);
-console.log(reduceData);
+// const reduceData = arr.reduce((acc,e,i,arr)=> acc += e);
+// console.log(reduceData);
 
 // // after accumulator calculation add 10
-const reduceData_2 = arr.reduce((acc,e,i,arr)=> acc += e , 10);
-console.log(reduceData_2);
+// const reduceData_2 = arr.reduce((acc,e,i,arr)=> acc += e , 10);
+// console.log(reduceData_2);
 
 // another example
 
